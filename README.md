@@ -1,47 +1,36 @@
-# Title of Your Project
+# Reviewer Gigm 
 
-## Introduction
+## [Q2.5] Explanation Samples
 
-Provide a brief introduction to your project here. Explain the purpose of the image samples and their corresponding explanations.
+Explanation Samples from UCR repository datasets for better illustration
 
 ---
 
-## Image Sample
+## Arrowhead Dataset
 
 ![Alt text for your main image](Explanation_Samples/arrowhead/Avg.png)
 
-**Explanation for Your Main Image:**
+**Average of test samples in each class**
 
-Here, write a detailed explanation for your main image. Explain what it represents, any specific details viewers should notice, and how it relates to your project or rebuttal.
+The above figure represents the average of all test samples in each class of the Arrowhead dataset. This figure is provided as reference for the example explanation samples given below.   
 
 ---
 
-## Comparative Image Samples
+## Class 1 Explanation Sample 69
 
 <p float="left">
-  <img src="Explanation_Samples/arrowhead/combined_0.png" />
-  <img src="Explanation_Samples/arrowhead/lime_0.png" />
-  <img src="Explanation_Samples/arrowhead/shap_0.png" />
-  <img src="Explanation_Samples/arrowhead/rise_0.png" />
+  <img src="Explanation_Samples/arrowhead/combined_69.png" />
+  <img src="Explanation_Samples/arrowhead/deletion_69.png" />
+  <img src="Explanation_Samples/arrowhead/insertion_69.png" />
+  <img src="Explanation_Samples/arrowhead/lime_69.png" />
+  <img src="Explanation_Samples/arrowhead/shap_69.png" />
+  <img src="Explanation_Samples/arrowhead/rise_69.png" />
 </p>
 
-### Explanations for Comparative Images
+### Sample Explanation  
 
-**Image 1 Explanation:**
+As denoted in the legend of each figure, **sample** represents the explanation sample and **masking** represents the inverse-STFT reconstructed signal after masking the most important feature from the time-frequency domain spectrogram. The most important feature is determined by each perturbation-based model stated in the title of each figure. The yellow-region represents the difference between the explanation sample and the masked reconstructed signal, which visualizes the effect of the important time-frequency feature.       
 
-- Explanation for Image 1 here...
-
-**Image 2 Explanation:**
-
-- Explanation for Image 2 here...
-
-**Image 3 Explanation:**
-
-- Explanation for Image 3 here...
-
-**Image 4 Explanation:**
-
-- Explanation for Image 4 here...
 
 ---
 
