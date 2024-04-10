@@ -19,10 +19,10 @@ Here, write a detailed explanation for your main image. Explain what it represen
 ## Comparative Image Samples
 
 <p float="left">
-  <img src="Explanation_Samples/arrowhead/combined_0.png" alt="Alt text for Image 1" width="100" />
-  <img src="Explanation_Samples/arrowhead/lime_0.png" alt="Alt text for Image 2" width="100" />
-  <img src="Explanation_Samples/arrowhead/shap_0.png" alt="Alt text for Image 3" width="100" />
-  <img src="Explanation_Samples/arrowhead/rise_0.png" alt="Alt text for Image 4" width="100" />
+  <img src="Explanation_Samples/arrowhead/combined_0.png" />
+  <img src="Explanation_Samples/arrowhead/lime_0.png" />
+  <img src="Explanation_Samples/arrowhead/shap_0.png" />
+  <img src="Explanation_Samples/arrowhead/rise_0.png" />
 </p>
 
 ### Explanations for Comparative Images
