@@ -1,26 +1,20 @@
-# Reviewer Ves3 
+# Reviewer XGER
 
-## [b] Insufficiency of Human Evaluation
+## [Q3.1] Insight into the Change in Hyperparameters
 
-### Explanation Preference
+### Explanation sensitivity to hyperparameter alpha 
 
-In order to strengthen our case of establishing the fairness of the ranking in explanation quality between our FIA combined method and other perturbation methods, we increased the number of evaluators from **six to twenty** graduate students studying machine learning. The results of this human evaluation indicates explanations produced by our method maintains superior ranking compared to other baseline methods despite increase in evaluators. The plot of human evaluation results is shown below:   
+### Average faithfulness comparison of various alpha values in Time and Time-Frequency Domain for all datasets. Meand and standard deviation are shown across three classifiers. The boldface highlights the best performance in each domain.
 
-![Alt text for your main image](Human_Evaluation/Human_Eval.jpg)
+|  | Time | Time-Frequency |
+|----------------------|----------|----------|
+| &alpha; = 0.8             | 0.115 &plusmn; 0.06   | 0.122 &plusmn; 0.06   |
+| &alpha; = 0.5             | 0.131 &plusmn; 0.06   |  0.133 &plusmn; 0.05  |
+| &alpha; = 0.2             | **0.147 &plusmn; 0.04**   |  **0.154 &plusmn; 0.08**  |
 
-Here, the rank-1 percentage increased for our Combined method from 42.9% to 46.6%, whereas LIME and SHAP rank-1 percentage tied in second place with 22.9%, and finally RISE rank-1 percentage was 21.6%. Compared to previous human evaluation with six graduate students, rank-1 percentage of LIME increased from 19.3% to 22.9%, RISE increased from 21.1% to 21.6%, and SHAP decreased from 25.4% to 22.9%.
+The alpha value indicates the insertion weight, and 1-alpha denotes the deletion weight according to equation 11 in the paper. The values above indicate mean and standard deviation for all nine UCR datasets using all three classifiers. The results show that decrease in the insertion weight and increase in the deletion weight increases the average faithfulness values for both time and time-frequency domain. The average faithfulness value is obtained by calculating the class probability change when inserting the most important feature into a baseline RBP data (insertion) or deleting the most important feature from original data (deletion). We hypothesize the reason higher deletion weight leads to better performance is because in the deletion method, the original data is within the model’s training distribution, and deleting a key feature effectively moves the data out of the training distribution leading to significant probability change. However, in the insertion method, the baseline RBP data is already outside the model’s training distribution, and inserting a key feature does not lead to drastic probability change by moving into the training distribution.
 
-### Total Evaluation Scores
-
-The total user's evaluation scores are also calcuated by allocating 4 points for rank-1, 3 points for rank-2, 2 points for rank-3, and 1 point for rank-4. Note when conducting the user study we allowed equal rankings for two or more methods. The total user's evaluation scores are shown below: 
-
-![Alt text for your main image](Human_Evaluation/Human_Eval2.png)
-
-The total score of our combined method is 1172 points, the total score of SHAP is 997 points, the total score of RISE is 975 points, and finally the total score of LIME is 970 points. We will leave full-scale domain-specific human evaluation as our future work.
-
----
-
-## [g] Adjusting the window size and hop size 
+### Adjusting the window size and hop size 
 
 We measured the average Faithfulness@k across all three models (bi-LSTM, ResNet-34, Transformer) with adjusted window size and hop size to observe the effect on the performance results. From the original window size of 16 and hop size of 8, we conducted experiments in size increased multiple of four and eight, which are window size 64, hop size 32, and window size 128, hop size 64. We conduct these experiments on the CinCECGTorso dataset of the UCR repository, which contains time-series length of 1639 timesteps, the longest dataset in our experiments. The main objective of conducting this experiment on the longest dataset is to first show that our Combined method has the optimal performance for various window sizes and hop sizes, and second is to show that the overall scale of the faithfulness values go up due to the larger area covered by the time-frequency features. 
 
@@ -46,3 +40,4 @@ We measured the average Faithfulness@k across all three models (bi-LSTM, ResNet-
 | Deletion   | 0.153 ± 0.02    | 0.336 ± 0.06    | 0.514 ± 0.05    | 0.703 ± 0.07    | 0.842 ± 0.03    |
 | Combined   | **0.159 ± 0.02**| 0.332 ± 0.03    | **0.524 ± 0.04**| **0.725 ± 0.04**| **0.855 ± 0.04**|
 
+---
