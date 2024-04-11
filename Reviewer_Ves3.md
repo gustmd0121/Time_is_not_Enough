@@ -16,14 +16,6 @@ The total score of our combined method is 1172 points, the total score of SHAP i
 
 ---
 
-## Arrowhead Dataset
 
-![Alt text for your main image](Explanation_Samples/arrowhead/Avg.png)
-
-**Average of test samples in each class**
-
-The above figure represents the average of all test samples in each class of the Arrowhead dataset. This figure is provided as reference for the example explanation samples given below.   
-
----
      
 
