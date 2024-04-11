@@ -20,6 +20,13 @@ The total score of our combined method is 1172 points, the total score of SHAP i
 
 ---
 
-
+## [g] Adjusting the window size and hop size 
      
-
+|  | @1 | @2 | @4 | @6 | @8 |
+|----------------------|----------|----------|----------|----------|----------|
+| LIME                | 0.064 &plusmn; 0.04   | 0.098 &plusmn; 0.08   | 0.291 &plusmn; 0.09   | 0.577 &plusmn; 0.03   | 0.688 &plusmn; 0.05   |
+| KernelSHAP                | 0.059 &plusmn; 0.06   | 0.104 &plusmn; 0.07  | 0.295 &plusmn; 0.08   | 0.541 &plusmn; 0.06   | 0.653 &plusmn; 0.07   |
+| RISE                | 0.062 &plusmn; 0.08   | 0.092 &plusmn; 0.08  | 0.274 &plusmn; 0.09  | 0.562 &plusmn; 0.09  | 0.671 &plusmn; 0.07   |
+| Insertion                | 0.055 &plusmn; 0.09   | 0.101 &plusmn; 0.06  | 0.291 &plusmn; 0.05  | 0.560 &plusmn; 0.06  | 0.647 &plusmn; 0.04   |
+| Deletion                | 0.062 &plusmn; 0.06   | 0.105 &plusmn; 0.07  | 0.313 &plusmn; 0.06  | 0.575 &plusmn; 0.05  | 0.683 &plusmn; 0.08   |
+| Combined                | 0.060 &plusmn; 0.05   | 0.108 &plusmn; 0.05  | 0.308 &plusmn; 0.08  | 0.583 &plusmn; 0.04 | 0.691 &plusmn; 0.06   |
