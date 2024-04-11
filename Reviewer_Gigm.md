@@ -1,5 +1,20 @@
 # Reviewer Gigm 
 
+## [Q2.2] AUP and AUR Evaluations for Synthetic Dataset
+
+|  | LIME | KernelSHAP | RISE | Insertion | Deletion | Combined |
+|----------------------|----------|----------|----------|----------|----------|----------|
+| AUP              | 0.489 &plusmn; 0.05   | 0.444 &plusmn; 0.06   | 0.391 &plusmn; 0.11   | 0.293 &plusmn; 0.08   | 0.467 &plusmn; 0.07   | 0.553 &plusmn; 0.10   |
+| AUR              | 0.431 &plusmn; 0.06   |  0.433 &plusmn; 0.07  | 0.330 &plusmn; 0.07   | 0.248 &plusmn; 0.06   | 0.427 &plusmn; 0.12   | 0.491 &plusmn; 0.04  |
+
+### AUP and AUR Analysis  
+
+The average Area Under Precision (AUP) and Area Under Recall (AUR) are calculated for the synthetic dataset for all three models (LSTM, ResNet-34, Transformer). For AUP we measure the proportion of identified features that are indeed salient by evaluating if the predicted features up to rank k are included in th top-k ground-truth features. For AUR, it assesses the model's ability to cover the entire set of relevant features (as defined by the ground-truth) within its top-k prediction.
+
+As shown in the table above, the AUP and AUR values of our proposed Combined method exceeds all other methods. The AUP is greater than AUR for all methods, indicating the models are particularly good at placing relevant features high in their ranked predictions.   
+
+---
+
 ## [Q2.5] Explanation Samples
 
 Explanation Samples from UCR repository datasets for better illustration
@@ -95,4 +110,4 @@ The important region of the combined method has the most distinct Class 1 region
 
 ### Explanation Sample Comparison  
 
-Unlike previous datasets, the Ford A dataset is extremely difficult to determine if certain methods produced better explanations compared to other methods, because the average of each class does accurately show the distance between certain class and other class. Additionally, there are similar oscillations between class 1 and class 2 samples, which makes the time-frequency domain features hard to distinguish from each other, and therefore a difficult dataset to obtain important features in the time-frequency domain. Therefore, according to Table 6 of our Appendix section, the average Faithfulness results of Time domain and Time-Frequency domain are similar for most methods. 
+The Ford A dataset presents unique challenges in determining the optimal explanation through human perception because the class averages do not accurately show the distance between target class and other classes. Furthermore, the oscillation patterns in class 0 and class 1 are similar, leading to resemblances in their time-frequency characteristics. This similarity complicates the process of generating explanations based on time-frequency features. We provide explanation samples from each method above, but it is difficult to distinguish optimal important features with only human perception.   
