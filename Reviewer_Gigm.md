@@ -4,14 +4,12 @@
 
 |  | LIME | KernelSHAP | RISE | Insertion | Deletion | Combined |
 |----------------------|----------|----------|----------|----------|----------|----------|
-| AUP              | 0.489 &plusmn; 0.05   | 0.444 &plusmn; 0.06   | 0.391 &plusmn; 0.11   | 0.293 &plusmn; 0.08   | 0.467 &plusmn; 0.07   | 0.553 &plusmn; 0.10   |
-| AUR              | 0.431 &plusmn; 0.06   |  0.433 &plusmn; 0.07  | 0.330 &plusmn; 0.07   | 0.248 &plusmn; 0.06   | 0.427 &plusmn; 0.12   | 0.491 &plusmn; 0.04  |
-
-### AUP and AUR Analysis  
+| AUP              | 0.489 &plusmn; 0.05   | 0.444 &plusmn; 0.06   | 0.391 &plusmn; 0.11   | 0.293 &plusmn; 0.08   | 0.467 &plusmn; 0.07   | **0.553 &plusmn; 0.10**   |
+| AUR              | 0.431 &plusmn; 0.06   |  0.433 &plusmn; 0.07  | 0.330 &plusmn; 0.07   | 0.248 &plusmn; 0.06   | 0.427 &plusmn; 0.12   | **0.491 &plusmn; 0.04**  |
 
 The average Area Under Precision (AUP) and Area Under Recall (AUR) are calculated for the synthetic dataset for all three models (LSTM, ResNet-34, Transformer). For AUP we measure the proportion of identified features that are indeed salient by evaluating if the predicted features up to rank k are included in th top-k ground-truth features. For AUR, it assesses the model's ability to cover the entire set of relevant features (as defined by the ground-truth) within its top-k prediction.
 
-As shown in the table above, the AUP and AUR values of our proposed Combined method exceeds all other methods. The AUP is greater than AUR for all methods, indicating the models are particularly good at placing relevant features high in their ranked predictions.   
+As shown in the table above, the AUP and AUR values of our proposed Combined method exceeds all other methods. This result can be inferred by the Rank-Biased Overlap (RBO) results, where the Combined method exceeds all other methods. We hypothesize that the RBO inherently includes aspects of both precision and recall due to its sensitivity to the order of features in the prediction and ground-truth (precision-like quality) and its sensitivity to the presence of features (recall-like quality) in the calculation. The AUP is greater than AUR for all methods, indicating the models are particularly good at placing relevant features high in their ranked predictions.    
 
 ---
 
