@@ -1,6 +1,6 @@
 # Explanation Samples
 
-Explanation Samples from UCR repository datasets for better illustration
+Explanation Samples from UCR repository datasets
 
 ---
 
