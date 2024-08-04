@@ -16,14 +16,20 @@ The above figure represents the average of all test samples in each class of the
 
 ## Class 1 Explanation Sample 69
 
-<p float="left">
-  <img src="Explanation_Samples/arrowhead/combined_69.png" />
-  <img src="Explanation_Samples/arrowhead/deletion_69.png" />
-  <img src="Explanation_Samples/arrowhead/insertion_69.png" />
-  <img src="Explanation_Samples/arrowhead/lime_69.png" />
-  <img src="Explanation_Samples/arrowhead/shap_69.png" />
-  <img src="Explanation_Samples/arrowhead/rise_69.png" />
-</p>
+<table>
+  <tr>
+    <td><img src="Explanation_Samples/arrowhead/combined_69.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/arrowhead/deletion_69.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/arrowhead/insertion_69.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/arrowhead/lime_69.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/arrowhead/shap_69.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/arrowhead/rise_69.png" width="100%" /></td>
+  </tr>
+</table>
 
 ### Sample Explanation  
 
@@ -43,14 +49,20 @@ Although the average of each class does not indicate definite ground-truth impor
 
 ## Class 0 Explanation Sample 0
 
-<p float="left">
-  <img src="Explanation_Samples/yoga/combined_0.png" />
-  <img src="Explanation_Samples/yoga/deletion_0.png" />
-  <img src="Explanation_Samples/yoga/insertion_0.png" />
-  <img src="Explanation_Samples/yoga/lime_0.png" />
-  <img src="Explanation_Samples/yoga/shap_0.png" />
-  <img src="Explanation_Samples/yoga/rise_0.png" />
-</p>
+<table>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/combined_0.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/deletion_0.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/insertion_0.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/lime_0.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/shap_0.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/rise_0.png" width="100%" /></td>
+  </tr>
+</table>
 
 ### Explanation Sample Comparison  
 
@@ -59,14 +71,20 @@ The important region of the combined method has the most distinct Class 0 region
 
 ## Class 1 Explanation Sample 192
 
-<p float="left">
-  <img src="Explanation_Samples/yoga/combined_192.png" />
-  <img src="Explanation_Samples/yoga/deletion_192.png" />
-  <img src="Explanation_Samples/yoga/insertion_192.png" />
-  <img src="Explanation_Samples/yoga/lime_192.png" />
-  <img src="Explanation_Samples/yoga/shap_192.png" />
-  <img src="Explanation_Samples/yoga/rise_192.png" />
-</p>
+<table>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/combined_192.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/deletion_192.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/insertion_192.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/lime_192.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/shap_192.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/rise_192.png" width="100%" /></td>
+  </tr>
+</table>
 
 ### Explanation Sample Comparison  
 
@@ -82,14 +100,20 @@ The important region of the combined method has the most distinct Class 1 region
 
 ## Class 1 Explanation Sample 302
 
-<p float="left">
-  <img src="Explanation_Samples/forda/combined_302.png" />
-  <img src="Explanation_Samples/forda/deletion_302.png" />
-  <img src="Explanation_Samples/forda/insertion_302.png" />
-  <img src="Explanation_Samples/forda/lime_302.png" />
-  <img src="Explanation_Samples/forda/shap_302.png" />
-  <img src="Explanation_Samples/forda/rise_302.png" />
-</p>
+<table>
+  <tr>
+    <td><img src="Explanation_Samples/forda/combined_302.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/forda/deletion_302.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/forda/insertion_302.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/forda/lime_302.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/forda/shap_302.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/forda/rise_302.png" width="100%" /></td>
+  </tr>
+</table>
 
 ### Explanation Sample Comparison  
 
