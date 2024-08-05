@@ -17,7 +17,16 @@ pip install -r requirements.txt
 ```
 
 # Dataset 
-Download the datasets from ![here](https://www.timeseriesclassification.com/dataset.php) and place the data in the data directory. The list of datasets used are as follows: 
+Download <span style="color: blue; text-decoration: underline;">Univariate Weka formatted ARFF files and .txt files</span> from [here](https://www.timeseriesclassification.com/dataset.php), unzip and place the directory in the data folder. The list of datasets used are as follows:
 ```
 CincECGTorso, TwoPatterns, MixedShapes, Arrowhead, Strawberry, Yoga, Ford A, Ford B, GunpointMaleFemale
 ```
+
+# Classifier Training
+We provide code for ResNet-34, bi-LSTM, and Transformer model training shown in the paper. To train a classifier, run <code style="background-color: #E8E8E8;">trainer.py</code> with configurations below 
+'''
+python trainer.py --mode train --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task <task>
+'''
+
+
+
