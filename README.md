@@ -24,9 +24,14 @@ CincECGTorso, TwoPatterns, MixedShapes, Arrowhead, Strawberry, Yoga, Ford A, For
 
 # Classifier Training
 We provide code for ResNet-34, bi-LSTM, and Transformer model training shown in the paper. To train a classifier, run <code style="background-color: #E8E8E8;">trainer.py</code> with configurations below 
-'''
+```
 python trainer.py --mode train --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task <task>
-'''
+```
+* style="background-color: #E8E8E8;">dataset</code>: The name of the dataset (e.g. "arrowhead")
+* style="background-color: #E8E8E8;">model_type</code>: The type of classifier model ("resnet", "transformer", "bilstm")
+* style="background-color: #E8E8E8;">num_classes</code>: Integer value of the number of classes in the dataset 
+* style="background-color: #E8E8E8;">task</code>: Classification or SpectralX ("classification", "spectralx")
+
 
 
 
