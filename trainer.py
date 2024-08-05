@@ -4,12 +4,11 @@ from torch import nn
 from torch.utils.data import DataLoader, random_split
 import torch.optim as optim 
 import random 
-from data import load_data
+from data_loader import load_data
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix, accuracy_score
 import seaborn as sns
 from models.models import *
-from xai.ours import *
-from metrics.rbo import *
+from models.spectralx import *
 import argparse
 import copy 
 import wandb
@@ -147,7 +146,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', type=int, default=16)
     parser.add_argument('--lr', type=float, default=2e-4)
     parser.add_argument('--n_epochs', type=int, default=200)
-    parser.add_argument('--mode', type=str, default='test', choices=['test', 'train'])
+    parser.add_argument('--mode', type=str, default='train', choices=['test', 'train'])
     parser.add_argument('--dataset', type=str, default='arrowhead', help="Dataset to train on")
     parser.add_argument('--model_type', type=str, default="resnet", choices=['resnet', 'transformer', 'bilstm'])
     parser.add_argument('--savedir', type=str, default="classification_models")

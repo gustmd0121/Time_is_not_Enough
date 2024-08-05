@@ -3,7 +3,6 @@ from torch.utils.data import Dataset
 import pandas as pd
 from scipy.fft import fft, ifft
 from scipy.signal import stft, istft
-from perturbations.robustness import *
 import random
 import numpy as np 
 import matplotlib.pyplot as plt 
@@ -74,8 +73,8 @@ def load_data(data_name, args):
 
     elif data_name == 'mixedshapes':
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/MixedShapesRegularTrain/MixedShapesRegularTrain_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/MixedShapesRegularTrain/MixedShapesRegularTrain_TEST.txt'
+        file_path = 'data/MixedShapesRegularTrain/MixedShapesRegularTrain_TRAIN.txt'  
+        file_path2 = 'data/MixedShapesRegularTrain/MixedShapesRegularTrain_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -95,8 +94,8 @@ def load_data(data_name, args):
 
     elif data_name=="yoga":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/Yoga/Yoga_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/Yoga/Yoga_TEST.txt'
+        file_path = 'data/Yoga/Yoga_TRAIN.txt'  
+        file_path2 = 'data/Yoga/Yoga_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -116,8 +115,8 @@ def load_data(data_name, args):
 
     elif data_name=="forda":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/FordA/FordA_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/FordA/FordA_TEST.txt'
+        file_path = 'data/FordA/FordA_TRAIN.txt'  
+        file_path2 = 'data/FordA/FordA_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -139,8 +138,8 @@ def load_data(data_name, args):
 
     elif data_name=="fordb":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/FordB/FordB_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/FordB/FordB_TEST.txt'
+        file_path = 'data/FordB/FordB_TRAIN.txt'  
+        file_path2 = 'data/FordB/FordB_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -162,8 +161,8 @@ def load_data(data_name, args):
 
     elif data_name=="strawberry":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/Strawberry/Strawberry_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/Strawberry/Strawberry_TEST.txt'
+        file_path = 'data/Strawberry/Strawberry_TRAIN.txt'  
+        file_path2 = 'data/Strawberry/Strawberry_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -183,8 +182,8 @@ def load_data(data_name, args):
 
     elif data_name=="cincecgtorso":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/CinCECGTorso/CinCECGTorso_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/CinCECGTorso/CinCECGTorso_TEST.txt'
+        file_path = 'data/CinCECGTorso/CinCECGTorso_TRAIN.txt'  
+        file_path2 = 'data/CinCECGTorso/CinCECGTorso_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -204,8 +203,8 @@ def load_data(data_name, args):
 
     elif data_name=="gunpointmalefemale":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/GunPointMaleVersusFemale/GunPointMaleVersusFemale_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/GunPointMaleVersusFemale/GunPointMaleVersusFemale_TEST.txt'
+        file_path = 'data/GunPointMaleVersusFemale/GunPointMaleVersusFemale_TRAIN.txt'  
+        file_path2 = 'data/GunPointMaleVersusFemale/GunPointMaleVersusFemale_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -225,8 +224,8 @@ def load_data(data_name, args):
 
     elif data_name=="arrowhead":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/ArrowHead/ArrowHead_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/ArrowHead/ArrowHead_TEST.txt'
+        file_path = 'data/ArrowHead/ArrowHead_TRAIN.txt'  
+        file_path2 = 'data/ArrowHead/ArrowHead_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -246,8 +245,8 @@ def load_data(data_name, args):
 
     elif data_name=="twopatterns":
         # Read the file into a DataFrame using space as the separator
-        file_path = 'data/Univariate_arff/TwoPatterns/TwoPatterns_TRAIN.txt'  
-        file_path2 = 'data/Univariate_arff/TwoPatterns/TwoPatterns_TEST.txt'
+        file_path = 'data/TwoPatterns/TwoPatterns_TRAIN.txt'  
+        file_path2 = 'data/TwoPatterns/TwoPatterns_TEST.txt'
         df = pd.read_csv(file_path, header=None, delim_whitespace=True)
         df2 = pd.read_csv(file_path2, header=None, delim_whitespace=True)
 
@@ -271,8 +270,8 @@ def load_data(data_name, args):
     #return num_freq and num_slices
     f,t,spectrogram = stft(data, fs=args.fs, nperseg=args.nperseg, noverlap=args.noverlap, boundary='zeros')
     
-    num_freq = spectrogram.shape[0]
-    num_slices = spectrogram.shape[1]
+    num_freq = f.shape[0]
+    num_slices = t.shape[0]
     
     print(f"Data Shape: {data.shape}, labels shape: {labels.shape}")
     
