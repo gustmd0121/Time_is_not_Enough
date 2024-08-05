@@ -15,3 +15,9 @@ git clone https://github.com/gustmd0121/Time_is_not_Enough.git
 cd Time_is_not_Enough
 pip install -r requirements.txt
 ```
+
+# Dataset 
+Download the datasets from ![here](https://www.timeseriesclassification.com/dataset.php) and place the data in the data directory. The list of datasets used are as follows: 
+```
+CincECGTorso, TwoPatterns, MixedShapes, Arrowhead, Strawberry, Yoga, Ford A, Ford B, GunpointMaleFemale
+```
