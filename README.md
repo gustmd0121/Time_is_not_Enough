@@ -22,15 +22,26 @@ Download <span style="color: blue; text-decoration: underline;">Univariate Weka 
 CincECGTorso, TwoPatterns, MixedShapes, Arrowhead, Strawberry, Yoga, Ford A, Ford B, GunpointMaleFemale
 ```
 
-# Classifier Training
-We provide code for ResNet-34, bi-LSTM, and Transformer model training shown in the paper. To train a classifier, run <code style="background-color: #E8E8E8;">trainer.py</code> with configurations below 
+# Classifier
+We provide code for ResNet-34, bi-LSTM, and Transformer model training shown in the paper. 
+
+## Training
+To train a classifier, run <code style="background-color: #E8E8E8;">trainer.py</code> with configurations below 
 ```
 python trainer.py --mode train --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task <task>
 ```
+
+## Testing
+To return precision, recall, f1, and accuracy of trained classifier 
+```
+python trainer.py --mode test  --classification_model <classification_model> --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task <task>
+```
+
 * <code style="background-color: #E8E8E8;">dataset</code>: The name of the dataset (e.g. "arrowhead")
 * <code style="background-color: #E8E8E8;">model_type</code>: The type of classifier model ("resnet", "transformer", "bilstm")
 * <code style="background-color: #E8E8E8;">num_classes</code>: Integer value of the number of classes in the dataset 
 * <code style="background-color: #E8E8E8;">task</code>: Classification or SpectralX ("classification", "spectralx")
+* <code style="background-color: #E8E8E8;">classification_model</code>: Path to trained classification model
 
 
 
