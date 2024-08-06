@@ -65,3 +65,14 @@ python trainer.py --label <label> --metric_eval True, --step_size <step_size> --
   
 * <code style="background-color: #E8E8E8;">step_size</code>: The step size for the @k values 
 * <code style="background-color: #E8E8E8;">ranking</code>: Ranking returned from FIA method above
+
+# Acknowledgements
+We use code from following repositories for FIA or baselines: 
+* [Lime-For-Time implementation](https://github.com/emanuel-metzenthin/Lime-For-Time)
+* [Official RISE implementation](https://github.com/eclique/RISE)
+
+we thank the authors for their open-source code 
+
+# Contact
+If you have any questions or recommendations, please contact us via e-mail 
+* [hs_chung@kaist.ac.kr](hs_chung@kaist.ac.kr)
