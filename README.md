@@ -58,7 +58,7 @@ python trainer.py --mode test  --classification_model <classification_model> --d
 * <code style="background-color: #E8E8E8;">topk</code>: k value for top-k features 
 
 ## Evaluation 
-Returns the average faithfulness@k in step sizes of 2 (@0, @2, @4, ...)
+Returns the average faithfulness@k in <step_size>
 ```
 python trainer.py --label <label> --metric_eval True, --step_size <step_size> --ranking <ranking>   
 ```
