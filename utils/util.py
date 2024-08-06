@@ -1,5 +1,6 @@
 import torch 
 import random
+import numpy as np 
 
 random.seed(42)
 torch.set_num_threads(32)
@@ -47,3 +48,9 @@ def generate_frequency_groups(total_timesteps, group_size):
      if total_timesteps in groups[-1]:
          groups = groups[:-1]
      return groups 
+ 
+def add_noise(ts):
+    mu, sigma = 0, 0.1 # mean and standard deviation
+    noise = np.random.normal(mu, sigma, ts.shape[0])
+    noisy_ts = np.add(ts.reshape(ts.shape[0]),noise.reshape(ts.shape[0]))
+    return noisy_ts

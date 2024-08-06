@@ -28,13 +28,13 @@ We provide code for ResNet-34, bi-LSTM, and Transformer model training shown in 
 ## Training
 To train a classifier, run <code style="background-color: #E8E8E8;">trainer.py</code> with configurations below 
 ```
-python trainer.py --mode train --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task <task>
+python trainer.py --mode train --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task "classification"
 ```
 
 ## Testing
 To return precision, recall, f1, and accuracy of trained classifier 
 ```
-python trainer.py --mode test  --classification_model <classification_model> --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task <task>
+python trainer.py --mode test  --classification_model <classification_model> --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task "classification"
 ```
 
 * <code style="background-color: #E8E8E8;">dataset</code>: The name of the dataset (e.g. "arrowhead")
@@ -43,6 +43,25 @@ python trainer.py --mode test  --classification_model <classification_model> --d
 * <code style="background-color: #E8E8E8;">task</code>: Classification or SpectralX ("classification", "spectralx")
 * <code style="background-color: #E8E8E8;">classification_model</code>: Path to trained classification model
 
+# SpectralX and FIA method 
 
+## FIA (Insertion, Deletion, Combined)
+Returns the top-k features with FIA method 
+```
+python trainer.py --mode test  --classification_model <classification_model> --dataset <dataset> --model_type <model_type> --num_classes <num_classes> --task "spectralx" --label <label> --num_perturbations <num_perturbations> --selected_regions <selected_regions> --method <method> --topk <topk>  
+```
 
+* <code style="background-color: #E8E8E8;">label</code>: Selected label (class) to conduct FIA (e.g. 0)
+* <code style="background-color: #E8E8E8;">num_perturbations</code>: Number of perturbations to conduct
+* <code style="background-color: #E8E8E8;">selected_regions</code>: Number of masked regions 
+* <code style="background-color: #E8E8E8;">method</code>: Insertion, Deletion, or Combined ("insertion", "deletion", "combined")
+* <code style="background-color: #E8E8E8;">topk</code>: k value for top-k features 
 
+## Evaluation 
+Returns the average faithfulness@k in step sizes of 2 (@0, @2, @4, ...)
+```
+python trainer.py --label <label> --metric_eval True, --step_size <step_size> --ranking <ranking>   
+```
+  
+* <code style="background-color: #E8E8E8;">step_size</code>: The step size for the @k values 
+* <code style="background-color: #E8E8E8;">ranking</code>: Ranking returned from FIA method above

@@ -3,6 +3,7 @@ from torch.utils.data import Dataset
 import pandas as pd
 from scipy.fft import fft, ifft
 from scipy.signal import stft, istft
+from utils.util import *
 import random
 import numpy as np 
 import matplotlib.pyplot as plt 
@@ -43,17 +44,12 @@ class TimeSeriesDataset(Dataset):
     def __getitem__(self, idx):
         data = self.data[idx].cpu().detach().numpy()
 
-        #frequency
-        freq_output = fft(data)
-
         #spectrogram
         f,t,spectrogram = stft(data, fs=self.args.fs, nperseg=self.args.nperseg, noverlap=self.args.noverlap, boundary='zeros')
         #obtain the rbp of spectrogram 
         xrec, background_spectrogram = sample_backgroundIdentification(f,t,spectrogram, self.data[idx], self.args) 
-        noise_data = add_noise(self.data[idx])
-        f_noise, t_noise, noise_spectrogram = stft(noise_data.cpu().detach().numpy(), fs=self.args.fs, nperseg=self.args.nperseg, noverlap=self.args.noverlap, boundary='zeros')
          
-        return self.data[idx], self.labels[idx], spectrogram, background_spectrogram, noise_data, noise_spectrogram, xrec, freq_output 
+        return self.data[idx], self.labels[idx], spectrogram, background_spectrogram, xrec
 
 def load_data(data_name, args):
     
