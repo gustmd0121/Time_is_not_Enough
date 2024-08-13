@@ -66,6 +66,66 @@ python trainer.py --label <label> --metric_eval True, --step_size <step_size> --
 * <code style="background-color: #E8E8E8;">step_size</code>: The step size for the @k values 
 * <code style="background-color: #E8E8E8;">ranking</code>: Ranking returned from FIA method above
 
+## Explanation Samples 
+
+### Arrowhead Dataset 
+
+![Alt text for your main image](Explanation_Samples/arrowhead/Avg.png)
+
+<table>
+  <tr>
+    <td><img src="Explanation_Samples/arrowhead/combined_69.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/arrowhead/deletion_69.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/arrowhead/insertion_69.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/arrowhead/lime_69.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/arrowhead/shap_69.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/arrowhead/rise_69.png" width="100%" /></td>
+  </tr>
+</table>
+
+### Yoga Dataset
+
+![Alt text for your main image](Explanation_Samples/yoga/Avg.png)
+
+<table>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/combined_0.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/deletion_0.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/insertion_0.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/lime_0.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/yoga/shap_0.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/yoga/rise_0.png" width="100%" /></td>
+  </tr>
+</table>
+
+### Ford A Dataset
+
+![Alt text for your main image](Explanation_Samples/forda/Avg.png)
+
+<table>
+  <tr>
+    <td><img src="Explanation_Samples/forda/combined_302.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/forda/deletion_302.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/forda/insertion_302.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/forda/lime_302.png" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><img src="Explanation_Samples/forda/shap_302.png" width="100%" /></td>
+    <td><img src="Explanation_Samples/forda/rise_302.png" width="100%" /></td>
+  </tr>
+</table>
+
+
 # Acknowledgements
 We use code from following repositories for FIA or baselines: 
 * [Lime-For-Time implementation](https://github.com/emanuel-metzenthin/Lime-For-Time)
