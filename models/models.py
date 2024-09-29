@@ -162,7 +162,7 @@ class TransformerModel(nn.Module):
         self.fc = nn.Linear(self.args.d_model, num_classes)
 
     def forward(self, x):
-        if self.initial_linear is None:
+        if self.initial_linear is None or self.initial_linear.in_features != x.shape[2]:
             self.initial_linear = nn.Linear(x.shape[2], self.args.d_model).to(x.device)
 
         x = self.initial_linear(x)
@@ -182,6 +182,23 @@ class TransformerModel(nn.Module):
         x = self.fc(x)
 
         return x
+    
+    def load_state_dict(self, state_dict, strict=True):
+        # Custom load_state_dict to handle initial_linear
+        model_state_dict = self.state_dict()
+        for name, param in state_dict.items():
+            if name == 'initial_linear.weight':
+                if self.initial_linear is None:
+                    self.initial_linear = nn.Linear(param.size(1), self.args.d_model).to(next(self.parameters()).device)
+                self.initial_linear.weight.data.copy_(param)
+            elif name == 'initial_linear.bias':
+                if self.initial_linear is None:
+                    continue  # Skip if we haven't created initial_linear yet
+                self.initial_linear.bias.data.copy_(param)
+            elif name in model_state_dict:
+                model_state_dict[name].copy_(param)
+        
+        super().load_state_dict(model_state_dict, strict=False)
 
 class BiLSTMModel(nn.Module):
     def __init__(self, args, num_classes):

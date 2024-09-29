@@ -67,6 +67,10 @@ class XAITrainer():
             rbp_signal = rbp_signal[(labels == self.label) & (predicted == self.label)]
             labels = labels[(labels == self.label) & (predicted == self.label)]
             
+            # Check if any samples remain after filtering
+            if data.shape[0] == 0:
+                continue  # Skip this batch if no samples remain
+
             spectrogram = spectrogram.unsqueeze(1).to(torch.complex64)
 
             masked_tensor = rbp_spec.to(torch.complex64).to(device)
@@ -152,6 +156,10 @@ class XAITrainer():
             
             total_count += data.shape[0]
         
+        if total_count == 0:
+            print("No more samples for the classifier prediction label that matches the gt label. Recommend to train the classifier model more epochs or use different hyperparameters.")
+            return selected_positions, positions_consider
+        
         class_probability_scores = [x / total_count for x in class_probability_scores]
         count = Counter([index for sublist in indices_list for index in sublist])
         summed_scores_for_indices = sum_scores_for_each_index(indices_list, class_probability_scores)
@@ -183,6 +191,10 @@ class XAITrainer():
             rbp_signal = rbp_signal[(labels == self.label) & (predicted == self.label)]
             labels = labels[(labels == self.label) & (predicted == self.label)]
             
+            # Check if any samples remain after filtering
+            if data.shape[0] == 0:
+                continue  # Skip this batch if no samples remain
+
             spectrogram = spectrogram.unsqueeze(1).to(torch.complex64)
             masked_tensor = rbp_spec.to(torch.complex64)
 
@@ -254,6 +266,10 @@ class XAITrainer():
             
             total_count += data.shape[0]
         
+        if total_count == 0:
+            print("No more samples for the classifier prediction label that matches the gt label. Recommend to train the classifier model more epochs or use different hyperparameters.")
+            return selected_positions, positions_consider
+          
         class_probability_scores = [x / total_count for x in class_probability_scores]
         count = Counter([index for sublist in indices_list for index in sublist])
         summed_scores_for_indices = sum_scores_for_each_index(indices_list, class_probability_scores)
@@ -285,7 +301,11 @@ class XAITrainer():
             rbp_spec = rbp_spec[(labels == self.label) & (predicted == self.label)]
             rbp_signal = rbp_signal[(labels == self.label) & (predicted == self.label)]
             labels = labels[(labels == self.label) & (predicted == self.label)]
-            
+
+            # Check if any samples remain after filtering
+            if data.shape[0] == 0:
+                continue  # Skip this batch if no samples remain
+
             spectrogram = spectrogram.unsqueeze(1).to(torch.complex64)
             spectrogram_del = spectrogram.clone()
 
@@ -391,6 +411,10 @@ class XAITrainer():
                     class_probability_scores_del[i] = torch.sum(x_del[:,self.label])
 
             total_count += data.shape[0]
+
+        if total_count == 0:
+            print("No more samples for the classifier prediction label that matches the gt label. Recommend to train the classifier model more epochs or use different hyperparameters.")
+            return selected_positions, positions_consider
 
         class_probability_scores = [x / total_count for x in class_probability_scores]
         class_probability_scores_del = [x / total_count for x in class_probability_scores_del]
